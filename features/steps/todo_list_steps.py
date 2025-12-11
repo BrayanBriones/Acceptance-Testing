@@ -63,8 +63,9 @@ def step_then_contains(context, title):
 
 @then('the output should contain:')
 def step_then_output_contains(context):
-    expected = context.text
-    assert expected == context.output, f"Expected exact output:\n{expected}\nGot:\n{context.output}"
+    expected = context.text.strip()
+    actual = context.output.strip()
+    assert expected == actual, f"Expected exact output:\n{expected}\nGot:\n{actual}"
 
 
 @then('the to-do list should show task "{title}" as completed')

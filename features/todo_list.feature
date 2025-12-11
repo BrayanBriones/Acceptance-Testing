@@ -12,7 +12,11 @@ Feature: To-Do List management
       | Pay bills    |
     When the user lists all tasks
     Then the output should contain:
-      "Tasks:\n- Buy groceries [Pending]\n- Pay bills [Pending]\n"
+      """
+      Tasks:
+      - Buy groceries [Pending]
+      - Pay bills [Pending]
+      """
 
   Scenario: Mark a task as completed
     Given the to-do list contains tasks:
